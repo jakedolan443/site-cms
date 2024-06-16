@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Webpage</title>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed&family=Merriweather&display=swap');
+
+body {
+    background: #a8c58f;
+    margin: 0px;
+    padding: 0;
+}
+
+.container {
+    width: 1024px;
+    margin: 0 auto;
+    background: #fff;
+    -moz-box-shadow: 0 0 6px #000;
+    -webkit-box-shadow: 0 0 6px #000;
+    box-shadow: 0 0 6px #000;
+    overflow: hidden;
+    height: 2048px;
+}
+
+.header {
+    position: relative;
+    width: 1024px;
+    background: #eaf1e7;
+    height: 118px;
+    overflow: hidden;
+    cursor: target;
+}
+
+.main {
+    padding: 40px;
+    padding-top: 28px;
+    background: #fff;
+    height: 100%;
+    background: #eaf1e7;
+}
+
+.button-bar {
+    position: absolute;
+    font-size: 0;
+    bottom: 0;
+    width: 1024px;
+    white-space: nowrap;
+}
+
+.button-bar button {
+    display: inline;
+    background: #a8c58f;
+    width: 128px;
+    height: 32px;
+    font: 13px monospace;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    border-top: none;
+    border-radius: 8px;
+}
+
+.button-bar .filler {
+    display: inline;
+    margin-left: -10%;
+    width: 120% !important;
+}
+
+.button-bar button:hover {
+    color: white;
+    background: #659056;
+}
+
+.button-bar .filler:hover {
+    background: #a8c58f !important;
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 6px;
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+}
+
+h2 {
+    margin: 0;
+    margin-bottom: 24px;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    text-decoration: bold;
+    font-size: 14px;
+}
+
+p {
+    margin: 0;
+    margin-bottom: 16px;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 18px;
+}
+
+.hidden {
+    display: none;
+}
+
+#logo-img {
+    width: auto;
+    height: 44px;
+    padding: 28px;
+    padding-top: 22px;
+}
+
+#banner-img {
+    width: 570px;
+    height: 100px;
+    position: absolute;
+    right: 0px;
+    opacity: .175;
+}
+
+#banner-media {
+    position: absolute;
+    right: 2px;
+    text-align: left;
+    bottom: 34px;
+}
+
+#banner-media p {
+    display: inline;
+    color: #5f7570;
+    font: 13px Verdana bold;
+    margin-right: 12px;
+}
+
+#banner-media p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.featured {
+    margin-top: 32px;
+}
+
+.featured h2 {
+    margin-bottom: 12px;
+}
+
+.featured a {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.directory {
+    margin-top: 32px;
+}
+
+.directory h2 {
+    margin-bottom: 12px;
+}
+
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/44073fca39.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+
+
+            <div class="header">
+                <img id="logo-img" src="https://jakedolan.net/logo.png"></img>
+                <img id="banner-img" src="https://jakedolan.net/banner.png"></img>
+                <div id="banner-media">
+                    <p><i class="fa-brands fa-github" style="color: #000; opacity: .5;"></i> jakedolan443</p>
+                    <p><i class="fa-brands fa-instagram" style="color: #c061cb; opacity: .9"></i> jake.dolan2</p>
+                    <p><i class="fa-solid fa-envelope" style="color: #175bc0; opacity: .6"></i> jakedolan443</p>
+                </div>
+                <div class="button-bar">
+                    <button class="filler">&emsp;</button>
+                </div>
+            </div>
+
+            <div id="main-content" class="main">
+
+                test
+
+            </div>
+    </div>
+<script>
+
+    setInterval(function() {
+        // Send a GET request to /update endpoint
+        fetch('update')
+            .then(response => response.text())
+            .then(data => {
+                // Update the content in the element with id "updateContent"
+                document.getElementById("main-content").innerHTML = "";
+                document.getElementById('main-content').innerHTML = data;
+            })
+            .catch(error => console.error('Error fetching updates:', error));
+    }, 300); // Repeat every 2 seconds (2000 milliseconds)
+
+
+</script>
+</body>
+</html>
